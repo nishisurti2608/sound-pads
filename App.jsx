@@ -5,11 +5,14 @@ import Pad from "./Components/Pad"
 export default function App() {
     const [pads, setPads] = React.useState(padsData)
 
-    function toggle(){
-    console.log("clicked!")}
+    function toggle(id){
+        setPads((prevPads) => prevPads.map((item) => {
+            return item.id === id ? {...item ,on: !item.on} : item
+        }))
+    }
 
     const buttonElements = pads.map(pad => (
-        <Pad onClick={toggle} isOn={pad.on} color={pad.color} key={pad.id} />
+        <Pad id={pad.id} toggle={toggle} isOn={pad.on} color={pad.color} key={pad.id} />
     ))
 
 
