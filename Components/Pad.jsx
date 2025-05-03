@@ -5,7 +5,7 @@ export default function Pad (props){
  
    
    
-    return <button style={{backgroundColor:props.color}}></button>
+    return <button  className = {props.isOn ? "on" : "null"} style={{backgroundColor:props.color}}></button>
  
 
 }
