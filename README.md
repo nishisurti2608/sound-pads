@@ -1,3 +1,10 @@
+
+# Small React Project 
+
+- Understand passing data around react 
+
+
+
 # Getting Started
 Install the dependencies and run the project
 ```
