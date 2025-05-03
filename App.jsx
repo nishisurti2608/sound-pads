@@ -1,17 +1,19 @@
-import padData from "./pads"
-import { useState } from "react"
+import React from "react"
+import padsData from "./pads"
+import Pad from "./Components/Pad"
 
-export default function App(props) {
+export default function App() {
+    const [pads, setPads] = React.useState(padsData)
 
-    const [pad,setPad]= useState(padData)
-    const styles = {
-        backgroundColor : props.darkMode ? "#222222" : "#cccccc"  
-    }
+    const buttonElements = pads.map(pad => (
+        <Pad color={pad.color} key={pad.id} />
+    ))
+
+
     return (
         <main>
             <div className="pad-container">
-                {/* always add key when mapping */}
-                {pad.map((eachPad) => <button style={styles} key={eachPad.id}></button>)} 
+                {buttonElements}
             </div>
         </main>
     )
