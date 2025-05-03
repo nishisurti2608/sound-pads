@@ -11,6 +11,15 @@ export default function App() {
         }))
     }
 
+    function turnOnAll(){
+        setPads((prevPads) => prevPads.map((item) => {return {...item, on: true}}))
+    }
+
+    function turnOffAll(){
+        setPads((prevPads) => prevPads.map((item) => {return {...item, on: false}}))
+    }
+    
+
     const buttonElements = pads.map(pad => (
         <Pad id={pad.id} toggle={toggle} isOn={pad.on} color={pad.color} key={pad.id} />
     ))
@@ -20,6 +29,8 @@ export default function App() {
         <main>
             <div className="pad-container">
                 {buttonElements}
+            <button className="on" onClick={turnOnAll}>Turn All ON</button>
+            <button className="on" onClick={turnOffAll}>Turn All OFF</button>
             </div>
         </main>
     )

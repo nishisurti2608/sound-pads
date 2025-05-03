@@ -59,9 +59,14 @@
          item you're iterating over has the same id as the `id` passed
          to this function, then return a new object with the `on` value
          set to the opposite of what it was before.
-         
+
          Otherwise (if the ids don't match), just return the previous
          item as it was, unchanged.
+
+# Challange 7 : 
+
+      Add turn all ON and turn all OFF buttons
+      
          
 # Small React Project 
 
